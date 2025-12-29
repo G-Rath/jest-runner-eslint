@@ -18,7 +18,6 @@ module.exports = {
         '<rootDir>/integrationTests/*.test.js',
         '<rootDir>/integrationTests/**/*.test.js',
       ],
-      snapshotResolver: './snapshot-resolver.js',
     },
     {
       displayName: 'tests',
