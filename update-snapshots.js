@@ -31,7 +31,7 @@ const extraContent = semver.lt(version, '30.1.0') ? '%0A' : '';
 fs.writeFileSync(
   './integrationTests/__snapshots__/github-actions.test.js.snap',
   ghaSnapshotContent
-    .replaceAll('is not defined.%0A%0A', 'is not defined.%0A')
-    .replaceAll('is not defined.%0A', 'is not defined.%0A' + extraContent),
+    .replace(/is not defined.%0A%0A/g, 'is not defined.%0A')
+    .replace(/is not defined.%0A/g, 'is not defined.%0A' + extraContent),
   'utf-8',
 );
