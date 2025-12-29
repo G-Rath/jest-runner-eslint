@@ -65,8 +65,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
-      - name: install with eslint v${{ matrix.eslint-version }}, jest@${{ matrix.jest-version }}, create-jest-runner@0, and jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }}
-        run: yarn add --dev eslint@${{ matrix.eslint-version }} jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} create-jest-runner@0 jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }} --ignore-engines
+      - name: install with eslint v${{ matrix.eslint-version }}, jest@${{ matrix.jest-version }}, and jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }}
+        run: yarn add --dev eslint@${{ matrix.eslint-version }} jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }} --ignore-engines
+      - run: yarn add create-jest-runner@0
       - run: node update-snapshot-links.js
       - name: run tests
         run: yarn test
@@ -108,8 +109,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
-      - name: install with eslint v${{ matrix.eslint-version }}, jest@${{ matrix.jest-version }}, create-jest-runner@1, and jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }}
-        run: yarn add --dev eslint@${{ matrix.eslint-version }} jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} create-jest-runner@1 jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }} --ignore-engines
+      - name: install with eslint v${{ matrix.eslint-version }}, jest@${{ matrix.jest-version }}, and jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }}
+        run: yarn add --dev eslint@${{ matrix.eslint-version }} jest@${{ matrix.jest-version }} babel-jest@${{ matrix.jest-version }} jest-watch-typeahead@${{ matrix.jest-watch-typeahead-version }} --ignore-engines
+      - run: yarn add create-jest-runner@1
       - run: node update-snapshot-links.js
       - name: run tests
         run: yarn test
